@@ -1,0 +1,81 @@
+﻿@model Course
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "_Layout";
+}
+
+<div class="container p-3">
+    
+    <div class="row pt-3">
+        <div class="col-6">
+            <h1 class="text-primary" style="font-style: italic">@Model.CourseName Grades </h1>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Assignment" asp-action="Create" asp-route-courseId="@Model.Id" class="btn btn-primary">
+                &nbsp;Add Assignment/Exam
+            </a>
+            
+            <a asp-controller="Course" asp-action="Index" asp-route-id="@Model.StudentId" class="btn btn-primary">
+                &nbsp;Return
+            </a>
+            
+        </div>
+
+    </div>
+    <br/>
+
+
+    <table class="table table-bordered table-striped" style="width: 100%">
+        <thead>
+        <tr>
+            <th>
+                Assignment/Exam
+            </th>
+            <th>
+                Grade
+            </th>
+            <th>
+                Weight
+            </th>
+            <th>
+                Options
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var obj in Model.Assignments)
+        {
+            <tr>
+                <td width:100>
+                    @obj.AssignmentName
+                    @* @Html.DisplayFor(m => obj.StudentId) *@
+                </td>
+                <td width:100>
+                    @obj.Grade
+                </td>
+                <td width:100>
+                    @obj.WeightOfGrade
+                </td>
+                <td width:100>
+                    <div class="w-80 btn-group" role="group">
+                        <a asp-controller="Assignment" asp-action="Delete" asp-route-id="@obj.Id" asp-route-courseId="@obj.CourseId"
+                           class="btn btn-primary mx-1"> <i class="bi bi-x-square-fill"></i> Remove </a>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+    <form>
+        <div class="container; text-center">
+            <h1>@Model.GetCalculatedGrade</h1>
+            <label class="fl fontLabel small"> Final Calculated Grade</label>
+            <div class="fl iconBox" style="margin-bottom: 5px"><i aria-hidden="true"></i></div>
+
+        </div>
+    </form>
+    
+</div>
+

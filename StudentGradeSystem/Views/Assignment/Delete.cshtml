@@ -1,0 +1,61 @@
+﻿@model Assignments
+
+<head>
+    <meta charset="utf-8">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/studentform.css"/>
+</head>
+
+<body>
+<div class="container">
+
+    <div class="align-content-center">
+        <h2 class="text-light" style="font-style: italic; font-size: larger; align-content: center"> Remove Assignment? </h2>
+        <hr/>
+    </div>
+
+    <form method="post" asp-action="Delete" asp-route-courseId="@Model.CourseId">
+
+        <div>
+            <div>
+                <label asp-for="AssignmentName" class="fl fontLabel small"> Assignment: </label>
+                <div class="fl iconBox"><i  aria-hidden="true"></i></div>
+                <div class="mb-3">
+                    <input asp-for="AssignmentName" class="textBox">
+                    <span asp-validation-for="AssignmentName"></span>
+                </div>
+            </div>
+			
+            <div>
+                <label asp-for="Grade" class="fl fontLabel small"> Grade: </label>
+                <div class="fl iconBox"><i  aria-hidden="true"></i></div>
+                <div class="mb-3">
+                    <input asp-for="Grade" class="textBox">
+                    <span asp-validation-for="Grade"></span>
+                </div>
+            </div>
+			
+            <div>
+                <label asp-for="WeightOfGrade" class="fl fontLabel small"> Weight: </label>
+                <div class="fl iconBox"><i  aria-hidden="true"></i></div>
+                <div class="mb-3">
+                    <input asp-for="WeightOfGrade" class="textBox">
+                    <span asp-validation-for="WeightOfGrade"></span>
+                </div>
+            </div>
+			
+        </div>
+		
+        <div class="col-auto;" style="margin-left: 30px">
+            <br>
+            <button type="submit" class="btn btn-primary" style="width: 150px; background:#ff6600 "> Remove</button>
+            <a href="javascript:history.go(-1)" class="btn btn-secondary; text-light"
+               style="width: 150px; background:#ff6600;">
+                Return
+            </a>
+        </div>
+
+    </form>
+</div>
+</body>

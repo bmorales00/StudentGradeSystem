@@ -1,0 +1,78 @@
+﻿@* @model IEnumerable<Course> *@
+@model Student
+
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "_Layout";
+}
+
+<div class="container p-3">
+    
+    <div class="row pt-3">
+        <div class="col-6">
+            <h1 class="text-primary" style="font-style: italic">@Model.FirstName's Courses</h1>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-controller="Course" asp-action="Create" asp-route-studentId="@Model.Id" class="btn btn-primary">
+                &nbsp;Add Course
+            </a>
+
+            <a asp-controller="Student" asp-action="Index" class="btn btn-primary">
+                &nbsp;Return
+            </a>
+        </div>
+
+    </div>
+    <br/>
+
+
+    <table class="table table-bordered table-striped" style="width: 100%">
+        <thead>
+        <tr>
+
+            <th>
+                Course Name
+            </th>
+            <th>
+                Final Grade
+            </th>
+            <th>
+                Grade List
+            </th>
+            <th>
+                Options
+            </th>
+        </tr>
+        </thead>
+
+        <tbody>
+        @foreach (var obj in Model.Courses)
+        {
+            <tr>
+                <td width:100>
+                    @obj.CourseName
+                </td>
+                <td width:100>
+                    @obj.FinalGrade
+                </td>
+                <td width:100>
+                    <div class="w-80 btn-group" role="group">
+                        <a asp-controller="Assignment" asp-action="Index" asp-route-id="@obj.Id"
+                           class="btn btn-primary mx-1"> <i class="bi bi-list-ol"></i> Grades </a>
+                    </div>
+                </td>
+                <td width:100>
+                    <div class="w-80 btn-group" role="group">
+                        <a asp-controller="Course" asp-action="Delete" asp-route-id="@obj.Id" asp-route-studentId="@obj.StudentId"
+                           class="btn btn-primary mx-1"> <i class="bi bi-x-square-fill"></i> Delete </a>
+                    </div>
+                </td>
+            </tr>
+        }
+        </tbody>
+    </table>
+
+</div>
+
+

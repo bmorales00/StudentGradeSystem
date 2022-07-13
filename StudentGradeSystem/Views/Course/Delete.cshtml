@@ -1,0 +1,41 @@
+﻿@model Course
+
+<head>
+    <meta charset="utf-8">
+    <link href="css/style.css" type="text/css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/studentform.css"/>
+</head>
+
+<body>
+
+<div class="container">
+    <div class="align-content-center" style="margin-left: 50px">
+        <h2 class="text-light" style="font-style: italic">Delete Course?</h2>
+        <hr/>
+    </div>
+
+    <form method="post" asp-route-studentId="@Model.StudentId" asp-action="Delete">
+        
+        <div>
+            <label asp-for="CourseName" class="fl fontLabel small"> Course Name: </label>
+            <div class="fl iconBox"><i class="fa fa-user" aria-hidden="true"></i></div>
+            <div class="mb-3">
+                <input asp-for="CourseName" class="textBox">
+                <span asp-validation-for="CourseName"></span>
+            </div>
+        </div>
+
+
+        <div class="col-auto;" style="margin-left: 30px">
+            <br>
+            <button type="submit" class="btn btn-primary" style="width: 150px; background:#ff6600 "> Delete</button>
+            <a href="javascript:history.go(-1)" class="btn btn-secondary; text-light"
+               style="width: 150px; background:#ff6600;">
+                Return
+            </a>
+        </div>
+
+    </form>
+</div>
+</body>

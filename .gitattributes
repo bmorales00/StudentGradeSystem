@@ -1,0 +1,3 @@
+*.sql linguist-detectable=true
+* linguist-vendored
+*.rb linguist-language=C#

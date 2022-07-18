@@ -395,3 +395,4 @@ C:\Users\bmmsf\RiderProjects\StudentGradeSystem\StudentGradeSystem\bin\Debug\net
 C:\Users\bmmsf\RiderProjects\StudentGradeSystem\StudentGradeSystem\bin\Debug\net6.0\zh-Hans\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\bmmsf\RiderProjects\StudentGradeSystem\StudentGradeSystem\bin\Debug\net6.0\zh-Hant\Microsoft.CodeAnalysis.CSharp.resources.dll
 C:\Users\bmmsf\RiderProjects\StudentGradeSystem\StudentGradeSystem\obj\Debug\net6.0\StudentGradeSystem.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\bmmsf\RiderProjects\StudentGradeSystem\StudentGradeSystem\bin\Debug\net6.0\appsettings.Staging.json
